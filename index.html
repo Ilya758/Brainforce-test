@@ -11,6 +11,34 @@
 </head>
 
 <body>
+    <div class="form" id="form-popup">
+        <div class="form__inner">
+            <form action="#" id="form">
+                <p class="form__header text">
+                    Заполните форму и закажите бесплатную консультацию
+                </p>
+                <span class="text" id="close__btn"></span>
+                <div class="input-text__container">
+                    <input type="text" name="name" class="text input__name" id="form__name" placeholder="Имя">
+                    <p class="text text__error" id="name_error"></p>
+                </div>
+                <div class="input-tel__container">
+                    <input type="tel" name="phone" class="text input__phone" id="form__phone" placeholder="Телефон">
+                    <p class="text text__error" id="tel_error"></p>
+                </div>
+                <button class="button button1 button_v_normal text" id="button_complete">Заказать консультацию</button>
+            </form>
+        </div>
+    </div>
+    <div class="form-complete" id="popup__complete">
+        <div class="form-complete-inner">
+            <div class="form-complete-info">
+                <span class="text" id="submit_btn"></span>
+                <p class="form-complete__congrats text">Спасибо!</p>
+                <p class="form-complete__text text">Скоро с Вами свяжется консультант!</p>
+            </div>
+        </div>
+    </div>
     <div class="wrapper">
         <!--Start header-->
         <header class="header">
