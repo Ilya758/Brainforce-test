@@ -16,3 +16,30 @@ $('#drop__btn').click(() => {
         }
     })
 })
+
+
+function closeModal() {
+    $('.btn').removeClass('button_v_press');
+    $('.form').toggleClass('form_v_disabled');
+    $('.form').removeClass('form_s_enabled');
+    $('body').toggleClass('no-scroll');
+    setTimeout(() => {
+        $('.form').removeClass('form_v_active');
+        $('.form').removeClass('form_v_disabled');
+    }, 280)
+}
+
+function toggleCloseBtn() {
+    $('#close__btn').toggleClass('close__btn_vis_hovered');
+}
+
+$('#close__btn').click(closeModal)
+
+$('#close__btn').mouseover(() => {
+    toggleCloseBtn();
+})
+
+$('#close__btn').mouseout(() => {
+    toggleCloseBtn();
+})
+
