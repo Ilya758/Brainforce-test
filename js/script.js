@@ -134,3 +134,32 @@ $(window).tapstart((evt) => {
     if (evt.target == $('.form__inner')[0] || evt.target == $('#form-popup')[0]) closeModal();
 })
 
+$('details').mouseenter((event) => {
+    if (event.currentTarget.open) {
+        $(event.currentTarget.children[0].children[1]).removeClass('acc__icon_hovered');
+        $(event.currentTarget.children[0].children[1]).addClass('acc__icon_close_hovered')
+    }
+    else $(event.currentTarget.children[0].children[1]).addClass('acc__icon_hovered')
+})
+
+$('details').mouseleave((event) => {
+    if (event.currentTarget.open) {
+        $(event.currentTarget.children[0].children[1]).removeClass('acc__icon_hovered'); $(event.currentTarget.children[0].children[1]).removeClass('acc__icon_close_hovered')
+    }
+    else {
+        $(event.currentTarget.children[0].children[1]).removeClass('acc__icon_close_hovered')
+        $(event.currentTarget.children[0].children[1]).removeClass('acc__icon_hovered')
+    }
+})
+
+$('details').click((event) => {
+    if (event.currentTarget.open) {
+        $(event.currentTarget.children[0].children[1]).addClass(['acc__icon_close_normal', 'acc__icon_close_hovered']);
+    }
+    else {
+        $(event.currentTarget.children[0].children[1]).removeClass(['acc__icon_close_normal', 'acc__icon_close_hovered']);
+    }
+})
+
+
+
