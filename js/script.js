@@ -111,3 +111,26 @@ function check(evt, chars, elem, id) {
     }
 }
 
+function hoverButton(elem) {
+    elem.mouseover(() => {
+        elem.addClass('button_v_hovered');
+    })
+
+    elem.mouseout(() => {
+        elem.removeClass('button_v_hovered');
+    })
+
+    elem.mousedown(() => {
+        elem.toggleClass('button_v_press');
+        elem.removeClass('button_v_hovered');
+    })
+}
+
+hoverButton($('#button_complete'))
+hoverButton($('.btn'))
+
+$(window).tapstart((evt) => {
+    $('.btn').removeClass('button_v_press', 'button_v_hovered');
+    if (evt.target == $('.form__inner')[0] || evt.target == $('#form-popup')[0]) closeModal();
+})
+
