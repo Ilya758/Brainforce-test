@@ -43,3 +43,17 @@ $('#close__btn').mouseout(() => {
     toggleCloseBtn();
 })
 
+$('.btn').click(() => {
+    setTimeout(() => {
+        $('body').toggleClass('no-scroll');
+        $('.form').toggleClass('form_s_enabled')
+    }, 600)
+    $('.form').toggleClass('form_v_active');
+})
+
+let str = '+37599 999-99-99';
+let name = $('#form__name');
+let phone = $('#form__phone');
+phone.mask('+37599 999-99-99');
+
+
