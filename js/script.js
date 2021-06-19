@@ -161,5 +161,23 @@ $('details').click((event) => {
     }
 })
 
+for (let e of ['.accordion-first details', '.accordion-second details', '.accordion-third details']) {
+    for (let i = 0; i < $(e).length; i++) {
+        $($(e)[i]).click((event) => {
+            $(event.currentTarget.children[0].children[1]).toggleClass('acc__icon_close_normal');
+            let elems = $($(e));
+            let elem = $($(elems)[i]);
+            toggleAcc(elem, elems);
+        })
+    }
+}
+
+function toggleAcc(elem, elems) {
+    $($($(elem)[0]).children[1]).toggleClass('acc__icon_close_normal');
+    if (!elem[0].open) for (let i = 0; i < $($(elems)).length; i++) {
+        $($(elems)[i]).removeAttr('open');
+    }
+    return;
+}
 
 
